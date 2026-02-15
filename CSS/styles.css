@@ -22,12 +22,6 @@
     --standar-font-family: "Zalando Sans SemiExpanded", sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    cursor: none;
-}   
-
 html,
 body {
     width: 100%;
@@ -35,6 +29,12 @@ body {
     background-color: var(--primary-bg-color);
     cursor: none;
 }
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    cursor: none;
+}   
 
 ::-webkit-scrollbar {
     width: 8px;
@@ -84,7 +84,7 @@ header {
     width: 100%;
     height: 80px;
     position: fixed;
-    z-index: 100;
+    z-index: 102;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,21 +93,28 @@ header {
 }
 
 nav {
-    width: clamp(30%, 40%, 45%);
+    width: 25%;
     display: flex;
-    justify-content: flex-end;
-    align-items: end;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
 }
 
 .logo-container a {
+    mix-blend-mode: difference;
     color: var(--primary-text-color);
+}
+
+.logo {
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
 }
 
 nav > ul {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .hover-this {
@@ -116,8 +123,150 @@ nav > ul {
     font-weight: 600;
 }
 
+.hover-this:nth-last-child(1) {
+    margin-right: 20px;
+}
+
 .hover-this:hover ~ .cursor {
     transform: translate(-50%, -50%) scale(8);
+}
+
+/*Mobile and tablet menu */
+.toggle-btn {
+    display: none;
+    justify-content: flex-end;
+}
+
+.burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.75em 2em 1.5em 2em;
+    background: rgba(255, 255, 255, 0);
+    outline: none;
+    border: none;
+    width: 28px;
+    height: 20px;
+    transition: all 250ms ease-out;
+    cursor: pointer;
+}
+
+.burger::before,
+.burger::after {
+    content: "";
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    background: #000;
+    transition: all 250ms ease-out;
+    will-change: transform;
+}
+
+.burger::before {
+    transform: translateY(-3px);
+}
+
+.burger::after {
+    transform: translateY(3px);
+}
+
+.active.burger::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.active.burger::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: var(--secundary-bg-color);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    will-change: transform;
+    z-index: 101;
+}
+
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item {
+    display: flex;
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.menu-item p {
+    position: relative;
+    text-align: center;
+    font-size: 12vw;
+    line-height: 80%;
+    will-change: transform;
+    transition: letter-spacing 0.3s;
+}
+
+.nav-items a {
+    color: var(--secundary-text-color);
+}
+
+.nav-items span{
+    display: inline-block;
+}
+
+.nav-items::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    background-color: #c03f13;
+    width: 100%;
+    height: 12px;
+    transition: transform 300ms ease-out;
+}
+
+.nav-items:hover::after {
+    letter-spacing: 0.075em;
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+.sub-nav {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: .5em;
+    opacity: 0;
+    z-index: 10;
+}
+
+.sub-nav p a {
+    font-size: 20px;
+    color:var(--secundary-text-color);
+}
+
+
+@media(max-width: 900px) {
+    .logo a {
+        font-size: 20px;
+    }
 }
 
 /*Main Section*/
@@ -153,6 +302,7 @@ main {
 .loader {
     width: 100%;
     height: 100%;
+    /* display: none; */
 }
 
 .loader-clip {
@@ -188,7 +338,6 @@ main {
 .center {
     text-shadow: 1px 1px 4px #222222;
     font-family: var(--title-font-family);
-    font-size: clamp(2rem, 4rem, 6rem);;
 }
 
 .marquee {
@@ -205,6 +354,10 @@ main {
     justify-content: space-between;
     align-items: center;
     font-family: var(--title-font-family);
+
+        .title {
+            font-size: clamp(1.4rem, 3.33vw, 5rem);            
+        }
 }
 
 .slogan {
@@ -213,20 +366,21 @@ main {
     left: 0;
     margin: 0 0 40px 40px;
     font-family: var(--subtitle-font-family);
+    font-size: clamp(0.85rem, 0.83vw, 1.2rem);
 }
 
 /*General Styles*/
 .title {
     text-shadow: 1px 1px 4px #222222;
-    font-size: clamp(2rem, 4rem, 6rem);
+    font-size: clamp(2rem, 3.33vw, 6rem);
     text-align: center;
     font-family: var(--title-font-family);
-    line-height: clamp(60px, 65px, 75px);
+    line-height: 65px;
     pointer-events: none;
 }
 
 .subtitle {
-    font-size: clamp(0.5rem, 1rem, 1.2rem);
+    font-size: clamp(0.85rem, 0.83vw, 1.2rem);
     text-align: center;
     font-family: var(--subtitle-font-family);
     position: absolute;
@@ -261,7 +415,7 @@ main {
 
 .text {
     width: 45%;
-    font-size: clamp(.8rem, 1.5rem, 2rem);
+    font-size: clamp(.85rem, 1.25vw, 2rem);
     font-family: var(--standar-font-family);
     font-weight: 600;
     text-align: justify;
@@ -287,7 +441,7 @@ main {
 
 .img-container {
     margin-bottom: 5%;
-    width: clamp(30%, 70%, 75%);
+    width: 70%;
     position: relative;
 }
 
@@ -327,7 +481,7 @@ main {
 
 .technologies {
   width: 70%;
-  height: 100%;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
@@ -415,7 +569,7 @@ footer {
 
 .author {
     font-family: var(--standar-font-family);
-    width: clamp(30%, 50%, 52%);
+    width: 50%;
     display: flex;
     cursor: none;
 }
@@ -425,7 +579,7 @@ footer {
 }
 
 .social-media {
-    width: clamp(30%, 40%, 50%);
+    width: 40%;
     height: 25%;
     display: flex;
     flex-direction: row;
