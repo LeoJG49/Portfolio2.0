@@ -1,0 +1,46 @@
+/*
+Mobile Devices 319px - 480px
+Ipads and Tablets 481px - 1200px
+Laptops 1201px - 1600px
+Desktops 1601px and more
+*/
+
+/*Mobile Devices*/
+@media (min-width: 319px) and (max-width: 480px) {
+    nav > ul {
+        display: none;
+    }
+
+    .toggle-btn {
+        display: flex;
+    }
+
+    /*Cards*/
+  .technologies {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+  }
+
+  .technologies-item {
+    width: 85%;
+    height: 250px;
+  }
+
+  .back-content {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .text-container {
+    flex-direction: column;
+  }
+
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+}
