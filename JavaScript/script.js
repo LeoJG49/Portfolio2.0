@@ -1,8 +1,12 @@
 import './loaderAnimationGSAP.js'
-import './chapterOneTextAnimationGSAP.js'
+import './textAnimationsGSAP.js'
 import './cursorPersonalized.js'
+import './burgerMenuGSAP.js'
 import './imgAppearAnimationGSAP.js'
 import './cardsAnimationGSAP.js'
+
+//TODO - Make the website totally responsive, fix the burger menu
+//
 
 //Smooth Scroll
 let lenis;
