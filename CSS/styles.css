@@ -17,9 +17,20 @@
     --tiny-font-size: .85rem;
     --primary-text-color: #222222;
     --secundary-text-color: #e7e7e7;
+    --text-shadow-color: #222222;
+    --border-color: #222222;
     --title-font-family: "Ramabhadra", sans-serif;
     --subtitle-font-family: "Google Sans Code", monospace;
     --standar-font-family: "Zalando Sans SemiExpanded", sans-serif;
+}
+
+.darkmode {
+    --primary-bg-color: #222222;
+    --secundary-bg-color: #e7e7e7;
+    --primary-text-color: #e7e7e7;
+    --secundary-text-color: #222222;
+    --text-shadow-color: #e7e7e7;
+    --border-color: #e7e7e7;
 }
 
 html,
@@ -34,14 +45,14 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     cursor: none;
-}   
+}
 
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: transparent;
+    background-color: var(--primary-bg-color);
     opacity: 0;
 }
 
@@ -88,7 +99,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 0 50px;
+    padding: 0 0 0 20px;
     font-family: var(--standar-font-family);
 }
 
@@ -97,8 +108,21 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 30px;
+    position: relative;
 }
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--secundary-bg-color);
+}
+
+
 
 .logo-container a {
     mix-blend-mode: difference;
@@ -106,7 +130,7 @@ nav {
 }
 
 .logo {
-    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
 }
 
 nav > ul {
@@ -141,11 +165,11 @@ nav > ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.75em 2em 1.5em 2em;
+    padding: 1.2em 1.2em 1.2em 1.2em;
     background: rgba(255, 255, 255, 0);
     outline: none;
     border: none;
-    width: 28px;
+    width: 30px;
     height: 20px;
     transition: all 250ms ease-out;
     cursor: pointer;
@@ -157,7 +181,7 @@ nav > ul {
     width: 30px;
     height: 2px;
     position: absolute;
-    background: #000;
+    background: var(--primary-text-color);
     transition: all 250ms ease-out;
     will-change: transform;
 }
@@ -214,7 +238,7 @@ nav > ul {
     position: relative;
     text-align: center;
     font-size: 12vw;
-    line-height: 80%;
+    line-height: 100%;
     will-change: transform;
     transition: letter-spacing 0.3s;
 }
@@ -236,7 +260,7 @@ nav > ul {
     transform-origin: center;
     background-color: #c03f13;
     width: 100%;
-    height: 12px;
+    height: 5px;
     transition: transform 300ms ease-out;
 }
 
@@ -257,9 +281,13 @@ nav > ul {
     z-index: 10;
 }
 
-.sub-nav p a {
+.sub-nav p {
     font-size: 20px;
-    color:var(--secundary-text-color);
+    color: var(--secundary-text-color);
+}
+
+.sub-nav p a {
+    color: var(--secundary-text-color);
 }
 
 
@@ -287,7 +315,8 @@ main {
     align-items: center;
     justify-content: center;
     position: relative; 
-    border-top: 2px dashed #222222;
+    border-top: 2px dashed var(--border-color);
+    background-color: var(--primary-bg-color);
 }
 
 /*Hero Section*/
@@ -336,7 +365,8 @@ main {
 }
 
 .center {
-    text-shadow: 1px 1px 4px #222222;
+    color: var(--primary-text-color);
+    text-shadow: 1px 1px 4px var(--text-shadow-color);
     font-family: var(--title-font-family);
 }
 
@@ -354,24 +384,30 @@ main {
     justify-content: space-between;
     align-items: center;
     font-family: var(--title-font-family);
+}
 
-        .title {
-            font-size: clamp(1.4rem, 3.33vw, 5rem);            
-        }
+.marquee-container .title {
+    font-size: clamp(1.65rem, 3.33vw, 5rem);
+}
+
+.top, .bottom {
+    color: var(--secundary-text-color);
 }
 
 .slogan {
+    color: var(--primary-text-color);
     position: absolute;
     bottom: 0;
     left: 0;
-    margin: 0 0 40px 40px;
+    margin: 0 0 20px 20px;
     font-family: var(--subtitle-font-family);
-    font-size: clamp(0.85rem, 0.83vw, 1.2rem);
+    font-size: clamp(0.8rem, 0.83vw, 1.2rem);
 }
 
 /*General Styles*/
 .title {
-    text-shadow: 1px 1px 4px #222222;
+    color: var(--primary-text-color);
+    text-shadow: 1px 1px 4px var(--text-shadow-color);
     font-size: clamp(2rem, 3.33vw, 6rem);
     text-align: center;
     font-family: var(--title-font-family);
@@ -380,13 +416,14 @@ main {
 }
 
 .subtitle {
-    font-size: clamp(0.85rem, 0.83vw, 1.2rem);
+    color: var(--primary-text-color);
+    font-size: clamp(0.8rem, 0.83vw, 1.2rem);
     text-align: center;
     font-family: var(--subtitle-font-family);
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 0 40px 40px 0;
+    margin: 0 20px 20px 0;
 }
 
 /*About Section*/
@@ -419,17 +456,18 @@ main {
     font-family: var(--standar-font-family);
     font-weight: 600;
     text-align: justify;
+    color: var(--primary-text-color);
 }
 
 /*Projects Section*/
 .three {
-    height: 150vh;
+    height: 160vh;
     flex-direction: column;
     justify-content: space-between;
+}
 
-        .title-container {
-            height: 25%;
-        }
+.three .title-container {
+    height: 25%;
 }
 
 .projects-img-container {
@@ -469,19 +507,19 @@ main {
 /*Technologies Section*/
 .four {
   min-height: 160vh;
-  border-bottom: 2px dashed #222222;
+  border-bottom: 2px dashed var(--border-color);
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
 
-    .title-container {
-        height: 25%;
-    }
+.four .title-container {
+  height: 25%;
 }
 
 .technologies {
-  width: 70%;
-  height: auto;
+  width: 80%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
@@ -547,13 +585,13 @@ main {
 
 /*Footer*/
 footer {
-  width: 100%;
-  height: 40vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-bg-color);
 }
 
 .footer-section-container {
@@ -586,14 +624,15 @@ footer {
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
+}
 
-        a {
-          transition: all .3s ease-in-out;
-        }
+.social-media a {
+    transition: all .3s ease-in-out;
+    color: var(--secundary-bg-color);
+}
 
-        a:hover {
-          transform: scale(1.2);
-        }
+.social-media a:hover {
+    transform: scale(1.2);
 }
 
 .copyright {
