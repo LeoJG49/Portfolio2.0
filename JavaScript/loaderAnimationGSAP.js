@@ -1,47 +1,53 @@
-//Disable the scroll while the loading animation is on going
-document.documentElement.style.overflowY = 'hidden';
+// Create a GSAP timeline for the loader animation
+const tl = gsap.timeline({
+    onStart: () => {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+    },
+    onComplete: () => {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+    }
+});
 
-gsap.from(".clip-top, .clip-bottom", 2, {
-    delay: 1,
+tl.from(".clip-top, .clip-bottom", {
+    duration: 2,
     height: "50vh",
     ease: "power4.inOut"
-})
+}, 1);
 
-gsap.to(".marquee", 3.5, {
-    delay: 0.75,
+tl.to(".marquee", {
+    duration: 3.5,
     top: "50%",
     ease: "power4.inOut"
-})
+}, 0.75);
 
-gsap.from(".clip-top .marquee, .clip-bottom .marquee", 5, {
-    delay: 1,
+tl.from(".clip-top .marquee, .clip-bottom .marquee", {
+    duration: 5,
     left: "100%",
     ease: "power3.inOut"
-})
+}, 1);
 
-gsap.from(".clip-center .marquee", 5, {
-    delay: 1,
+tl.from(".clip-center .marquee", {
+    duration: 5,
     left: "-50%",
     ease: "power3.inOut"
-})
+}, 1);
 
-gsap.to(".clip-top", 2, {
-    delay: 6,
+tl.to(".clip-top", {
+    duration: 2,
     clipPath: "inset(0 0 100% 0)",
     ease: "power4.inOut"
-})
+}, 6);
 
-gsap.to(".clip-bottom", 2, {
-    delay: 6,
+tl.to(".clip-bottom", {
+    duration: 2,
     clipPath: "inset(100% 0 0 0)",
     ease: "power4.inOut"
-})
+}, 6);
 
-gsap.to(".clip-top .marquee, .clip-bottom .marquee, .clip-center .marquee span", 1, {
-    delay: 6,
+tl.to(".clip-top .marquee, .clip-bottom .marquee, .clip-center .marquee span", {
+    duration: 1,
     opacity: 0,
-    ease: "power2.inOut",
-    onComplete: () => {
-        document.documentElement.style.overflowY = 'auto';
-    }
-})
+    ease: "power2.inOut"
+}, 6);
