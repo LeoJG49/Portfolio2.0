@@ -6,7 +6,7 @@ document.fonts.ready.then(() => {
 
     let split;
 
-    SplitText.create(".chapter1, .hover-this, .logo", {
+    SplitText.create(".chapter1, .hover-this, .logo, .dark-mode-toggle, .toggle-btn", {
         type: "words, lines",
         wordsClass: "word",
         linesClass: "line",
