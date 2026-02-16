@@ -1,6 +1,7 @@
 import './loaderAnimationGSAP.js'
 import './textAnimationsGSAP.js'
 import './cursorPersonalized.js'
+import './darkMode.js'
 import './burgerMenuGSAP.js'
 import './imgAppearAnimationGSAP.js'
 import './cardsAnimationGSAP.js'
