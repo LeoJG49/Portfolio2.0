@@ -12,18 +12,18 @@ cards.forEach(card => {
 
   const tl = gsap.timeline({ paused: true, reversed: true });
 
-  tl.to(card, {
+  tl.to(inner, {
         rotateY: 180,
-        scale: 1.05,
-        duration: 0.8,
-        ease: 'power3.inOut'
+        duration: 0.5,
+        ease: 'power2.out'
     })
+
     .to(back, {
         y: 0,
         opacity: 1,
-        duration: 0.4,
-        ease: 'back.out'
-    }, '-=0.3');
+        duration: 0.8,
+        ease: 'power2.out'
+    }, '<');
 
   timelines.set(card, tl);
 
