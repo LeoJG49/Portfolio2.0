@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     let activeItemIndicator = document.querySelector(".menu-item p#active::after");
     const toggleButton = document.querySelector(".burger");
+    const overlayLinks = document.querySelectorAll(".overlay-menu .nav-items a");
     let isOpen = false;
 
     gsap.set(".menu-item p", {y: 225})
@@ -34,18 +35,34 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: .5,
     }, "<")
 
-    tl.to(".logo-container a", {
-        color: "#e7e7e7",
-        duration: 1.5,
-        ease: "power4.out"
-    }, 0)
-
     toggleButton.addEventListener("click", () => {
         if(isOpen) {
-            tl.reverse()  
+            tl.reverse()
+            toggleButton.classList.remove('active')
         } else {
             tl.play()
+            toggleButton.classList.add('active')
         }
         isOpen = !isOpen 
     })
+
+    // Clicks on the overlay options
+    overlayLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            if(isOpen) {
+                e.preventDefault();
+                const href = link.getAttribute("href");
+                isOpen = false;
+                toggleButton.classList.remove('active');
+                
+                // Close the menu with the animation
+                tl.reverse();
+                
+                // Direct the user to the section after the animation finished
+                gsap.delayedCall(tl.duration(), () => {
+                    window.location.hash = href;
+                });
+            }
+        });
+    });
 })
