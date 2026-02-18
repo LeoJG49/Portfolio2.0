@@ -27,7 +27,7 @@
       "  .four { height: var(--app-height) !important; }\n" +
       "  footer { height: calc(var(--app-height) * 0.4) !important; }\n" +
       "  .three { height: calc(var(--app-height) * 1.6) !important; }\n" +
-      "  .overlay, .overlay-menu { height: var(--app-height) !important; }\n" +
+      "  .overlay, .overlay-menu { height: var(--app-height) !important; min-height: 100dvh !important; }\n" +
       "}\n";
     document.head.appendChild(style);
   }
