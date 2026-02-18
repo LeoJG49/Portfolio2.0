@@ -1,12 +1,12 @@
 // Create a GSAP timeline for the loader animation
 const tl = gsap.timeline({
     onStart: () => {
-        document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
     },
     onComplete: () => {
-        document.body.style.overflow = '';
         document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
     }
 });
 
