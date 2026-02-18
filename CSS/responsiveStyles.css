@@ -28,7 +28,64 @@ Desktops 1601px and more
 --------------------
 */
 @media (min-width: 319px) and (max-width: 480px) {
-/*
+  /*
+   * Stable viewport: use svh so layout is not affected by browser UI
+   * (e.g. address bar showing/hiding). Content height stays consistent.
+   */
+  html,
+  body {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .loader {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .loader-clip {
+    height: 33.3vh;
+    height: 33.3svh;
+  }
+
+  .clip-center {
+    height: 33.3vh;
+    height: 33.3svh;
+    top: 33.3vh;
+    top: 33.3svh;
+  }
+
+  .two {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .four {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  footer {
+    height: 40vh;
+    height: 40svh;
+  }
+
+  .three {
+    height: 160vh;
+    height: 160svh;
+  }
+
+  .overlay,
+  .overlay-menu {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .cursor {
+    display: none;
+  }
+
+  /*
 --------------------
       Header
 --------------------
@@ -51,7 +108,6 @@ Desktops 1601px and more
 ---------------------
 */
   .two {
-    height: 100svh;
     justify-content: space-between;
   }
 
@@ -83,8 +139,6 @@ Desktops 1601px and more
 ----------------------
 */
   .three {
-    height: 100svh;
-
       .title-container {
         height: 25%;
       }
@@ -178,6 +232,61 @@ Desktops 1601px and more
 ---------------------
 */
 @media (min-width: 481px) and (max-width: 850px) {
+  /*
+   * Stable viewport: use svh so layout is not affected by browser UI.
+   */
+  html,
+  body {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .loader {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .loader-clip {
+    height: 33.3vh;
+    height: 33.3svh;
+  }
+
+  .clip-center {
+    height: 33.3vh;
+    height: 33.3svh;
+    top: 33.3vh;
+    top: 33.3svh;
+  }
+
+  .two {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .four {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  footer {
+    height: 40vh;
+    height: 40svh;
+  }
+
+  .three {
+    height: 160vh;
+    height: 160svh;
+  }
+
+  .overlay,
+  .overlay-menu {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .cursor {
+    display: none;
+  }
 /*
 --------------------
       Header
@@ -201,7 +310,6 @@ Desktops 1601px and more
 ---------------------
 */
   .two {
-    height: 100svh;
     justify-content: space-between;
   }
 
@@ -233,8 +341,6 @@ Desktops 1601px and more
 ----------------------
 */
   .three {
-    height: 100svh;
-
       .title-container {
         height: 25%;
       }
@@ -314,6 +420,61 @@ Desktops 1601px and more
 -----------------
 */
 @media (min-width: 851px) and (max-width: 1200px) {
+  /*
+   * Stable viewport: use svh so layout is not affected by browser UI.
+   */
+  html,
+  body {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .loader {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .loader-clip {
+    height: 33.3vh;
+    height: 33.3svh;
+  }
+
+  .clip-center {
+    height: 33.3vh;
+    height: 33.3svh;
+    top: 33.3vh;
+    top: 33.3svh;
+  }
+
+  .two {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .four {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  footer {
+    height: 40vh;
+    height: 40svh;
+  }
+
+  .three {
+    height: 160vh;
+    height: 160svh;
+  }
+
+  .overlay,
+  .overlay-menu {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .cursor {
+    display: none;
+  }
 /*
 --------------------
       Header
@@ -336,10 +497,6 @@ Desktops 1601px and more
     About Section
 ---------------------
 */
-  .two {
-    height: 100svh;
-  }
-
   .text-container {
     flex-direction: column;
   }
@@ -367,8 +524,6 @@ Desktops 1601px and more
 ----------------------
 */
   .three {
-    height: 100svh;
-
       .title-container {
         height: 25%;
       }
