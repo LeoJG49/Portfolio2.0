@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let activeItemIndicator = document.querySelector(".menu-item p#active::after");
+    let activeItemIndicator = document.querySelector(".menu-item p#active");
     const toggleButton = document.querySelector(".burger");
     const overlayLinks = document.querySelectorAll(".overlay-menu .nav-items a");
     let isOpen = false;
