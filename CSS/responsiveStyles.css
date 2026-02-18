@@ -29,9 +29,8 @@ Desktops 1601px and more
 */
 @media (min-width: 319px) and (max-width: 480px) {
   /*
-   * Fixed viewport: use lvh (large viewport height) so layout never changes
-   * when the browser bar shows/hides. Content is laid out as if the bar
-   * didn't exist; no reflow = no jerk on scroll.
+   * Fixed viewport: use lvh so layout never changes when the browser bar shows/hides.
+   * If viewportHeightFallback.js is loaded it overrides these with var(--app-height).
    */
   html,
   body {
