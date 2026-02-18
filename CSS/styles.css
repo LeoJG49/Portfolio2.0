@@ -313,7 +313,6 @@ main {
 
 .containers {
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -341,9 +340,9 @@ main {
 */
 .loader {
     width: 100%;
-    height: 100%;
     pointer-events: none;
     overflow: hidden;
+    min-height: 100vh;
 }
 
 .loader-clip {
@@ -449,11 +448,12 @@ main {
 .two {
     flex-direction: column;
     justify-content: space-between;
+    height: 100vh;
 }
 
 .title-container {
     width: 100%;
-    height: 40%;
+    height: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -462,10 +462,10 @@ main {
 
 .text-container {
     width: 100%;
-    height: 60%;
+    height: 75%;
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     padding: 0 40px 0 40px;
 }
 
@@ -534,7 +534,6 @@ main {
 --------------------------
 */
 .four {
-  height: 100svh;
   height: 100vh;
   border-bottom: 2px dashed var(--border-color);
   flex-direction: column;
