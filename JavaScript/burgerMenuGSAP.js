@@ -52,15 +52,21 @@ document.addEventListener("DOMContentLoaded", () => {
             if(isOpen) {
                 e.preventDefault();
                 const href = link.getAttribute("href");
+                if (!href) return;
                 isOpen = false;
                 toggleButton.classList.remove('active');
-                
+
                 // Close the menu with the animation
                 tl.reverse();
-                
-                // Direct the user to the section after the animation finished
+
+                // After animation: mailto/external use location.href; in-page anchors use hash
+                const isMailtoOrExternal = /^(mailto:|https?:)/i.test(href);
                 gsap.delayedCall(tl.duration(), () => {
-                    window.location.hash = href;
+                    if (isMailtoOrExternal) {
+                        window.location.href = href;
+                    } else {
+                        window.location.hash = href;
+                    }
                 });
             }
         });
