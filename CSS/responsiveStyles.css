@@ -79,6 +79,8 @@ Desktops 1601px and more
   .overlay-menu {
     height: 100vh;
     height: 100lvh;
+    /* Always cover visible viewport when bar hides (avoids gap below menu) */
+    min-height: 100dvh;
   }
 
   .cursor {
@@ -282,6 +284,7 @@ Desktops 1601px and more
   .overlay-menu {
     height: 100vh;
     height: 100lvh;
+    min-height: 100dvh;
   }
 
   .cursor {
@@ -470,6 +473,7 @@ Desktops 1601px and more
   .overlay-menu {
     height: 100vh;
     height: 100lvh;
+    min-height: 100dvh;
   }
 
   .cursor {
