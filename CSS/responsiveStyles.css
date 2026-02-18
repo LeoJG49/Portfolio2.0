@@ -430,10 +430,55 @@ Desktops 1601px and more
     font-size: 1rem;
     padding: 15px;
   }
+}
 
 /*
+-----------------
+    Laptops
+-----------------
+*/
+@media (min-width: 1201px) and (max-width: 1600px) {
+/*
 --------------------
-      Footer
+      Header
 --------------------
 */
+  nav {
+    width: 30%;
+  }
+/*
+---------------------
+    About Section
+---------------------
+*/
+  .text-container {
+    gap: 20px;
+  }
+
+  .text {
+    width: 80%;
+  }
+
+/*
+--------------------------
+    Technologie Section
+--------------------------
+*/
+  .four .title {
+    height: 25%;
+  }
+
+  .technologies {
+    width: 80%;
+  } 
+
+  .technologies-item {
+    flex: 0 0 50%;
+    height: 350px;
+  }
+
+  .back-content {
+    font-size: 1rem;
+    padding: 15px;
+  }
 }
