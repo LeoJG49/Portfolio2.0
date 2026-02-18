@@ -121,6 +121,7 @@ nav {
     outline: none;
     border: none;
     color: var(--secundary-bg-color);
+    cursor: none;
 }
 
 .logo-container a {
@@ -341,6 +342,8 @@ main {
 .loader {
     width: 100%;
     height: 100%;
+    pointer-events: none;
+    overflow: hidden;
 }
 
 .loader-clip {
@@ -547,7 +550,6 @@ main {
       Cards
 --------------------
 */
-
 .technologies {
     width: 60%;
     height: 100%;
