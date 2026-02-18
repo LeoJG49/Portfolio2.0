@@ -1,6 +1,6 @@
 if (window.matchMedia('(min-width: 1200px)').matches) {
     (function() {
-        const link = document.querySelectorAll('.hover-this, .logo, .technologies-item, .project-links, .footer-title, .social-media a')
+        const link = document.querySelectorAll('.hover-this, .logo, .technologies-item, .project-links, .footer-title, .social-media a, .dark-mode-toggle')
         const cursor = document.querySelector('.cursor')
     
         link.forEach(link => {
