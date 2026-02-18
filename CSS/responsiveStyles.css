@@ -29,56 +29,57 @@ Desktops 1601px and more
 */
 @media (min-width: 319px) and (max-width: 480px) {
   /*
-   * Stable viewport: use svh so layout is not affected by browser UI
-   * (e.g. address bar showing/hiding). Content height stays consistent.
+   * Fixed viewport: use lvh (large viewport height) so layout never changes
+   * when the browser bar shows/hides. Content is laid out as if the bar
+   * didn't exist; no reflow = no jerk on scroll.
    */
   html,
   body {
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100lvh;
   }
 
   .loader {
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100lvh;
   }
 
   .loader-clip {
     height: 33.3vh;
-    height: 33.3svh;
+    height: 33.3lvh;
   }
 
   .clip-center {
     height: 33.3vh;
-    height: 33.3svh;
+    height: 33.3lvh;
     top: 33.3vh;
-    top: 33.3svh;
+    top: 33.3lvh;
   }
 
   .two {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
   }
 
   .four {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
   }
 
   footer {
     height: 40vh;
-    height: 40svh;
+    height: 40lvh;
   }
 
   .three {
     height: 160vh;
-    height: 160svh;
+    height: 160lvh;
   }
 
   .overlay,
   .overlay-menu {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
   }
 
   .cursor {
@@ -233,55 +234,55 @@ Desktops 1601px and more
 */
 @media (min-width: 481px) and (max-width: 850px) {
   /*
-   * Stable viewport: use svh so layout is not affected by browser UI.
+   * Fixed viewport: use lvh so layout never changes when browser bar shows/hides.
    */
   html,
   body {
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100lvh;
   }
 
   .loader {
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100lvh;
   }
 
   .loader-clip {
     height: 33.3vh;
-    height: 33.3svh;
+    height: 33.3lvh;
   }
 
   .clip-center {
     height: 33.3vh;
-    height: 33.3svh;
+    height: 33.3lvh;
     top: 33.3vh;
-    top: 33.3svh;
+    top: 33.3lvh;
   }
 
   .two {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
   }
 
   .four {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
   }
 
   footer {
     height: 40vh;
-    height: 40svh;
+    height: 40lvh;
   }
 
   .three {
     height: 160vh;
-    height: 160svh;
+    height: 160lvh;
   }
 
   .overlay,
   .overlay-menu {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
   }
 
   .cursor {
@@ -421,55 +422,55 @@ Desktops 1601px and more
 */
 @media (min-width: 851px) and (max-width: 1200px) {
   /*
-   * Stable viewport: use svh so layout is not affected by browser UI.
+   * Fixed viewport: use lvh so layout never changes when browser bar shows/hides.
    */
   html,
   body {
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100lvh;
   }
 
   .loader {
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100lvh;
   }
 
   .loader-clip {
     height: 33.3vh;
-    height: 33.3svh;
+    height: 33.3lvh;
   }
 
   .clip-center {
     height: 33.3vh;
-    height: 33.3svh;
+    height: 33.3lvh;
     top: 33.3vh;
-    top: 33.3svh;
+    top: 33.3lvh;
   }
 
   .two {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
   }
 
   .four {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
   }
 
   footer {
     height: 40vh;
-    height: 40svh;
+    height: 40lvh;
   }
 
   .three {
     height: 160vh;
-    height: 160svh;
+    height: 160lvh;
   }
 
   .overlay,
   .overlay-menu {
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
   }
 
   .cursor {
