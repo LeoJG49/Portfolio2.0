@@ -5,9 +5,7 @@ import './darkMode.js'
 import './burgerMenuGSAP.js'
 import './imgAppearAnimationGSAP.js'
 import './cardsAnimationGSAP.js'
-
-//TODO - Make the website totally responsive, fix the burger menu
-//
+import './viewportHeightFallback.js'
 
 // Smooth scroll (laptop/desktop only). Must sync Lenis with GSAP ScrollTrigger
 // so mouse wheel scroll works; without this, ScrollTrigger sees wrong scroll and page jumps to top.
