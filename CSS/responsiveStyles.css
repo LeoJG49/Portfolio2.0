@@ -51,7 +51,7 @@ Desktops 1601px and more
 ---------------------
 */
   .two {
-    height: 100dvh;
+    height: 100svh;
     justify-content: space-between;
   }
 
@@ -73,7 +73,7 @@ Desktops 1601px and more
   }
 
   .text {
-    width: 80dvw;
+    width: 80%;
     align-items: start;
   }
 
@@ -83,7 +83,7 @@ Desktops 1601px and more
 ----------------------
 */
   .three {
-    height: 100dvh;
+    height: 100svh;
 
       .title-container {
         height: 25%;
@@ -110,7 +110,7 @@ Desktops 1601px and more
 
   .mask {
     width: 80%;
-    height: 90%;
+    height: 80%;
   }
 
   .img-container:nth-child(even) {
@@ -201,7 +201,7 @@ Desktops 1601px and more
 ---------------------
 */
   .two {
-    height: 100dvh;
+    height: 100svh;
     justify-content: space-between;
   }
 
@@ -233,7 +233,7 @@ Desktops 1601px and more
 ----------------------
 */
   .three {
-    height: 100dvh;
+    height: 100svh;
 
       .title-container {
         height: 25%;
@@ -260,7 +260,7 @@ Desktops 1601px and more
 
   .mask {
     width: 80%;
-    height: 90%;
+    height: 80%;
   }
 
   .img-container:nth-child(even) {
@@ -337,7 +337,7 @@ Desktops 1601px and more
 ---------------------
 */
   .two {
-    height: 100dvh;
+    height: 100svh;
   }
 
   .text-container {
@@ -367,7 +367,7 @@ Desktops 1601px and more
 ----------------------
 */
   .three {
-    height: 100dvh;
+    height: 100svh;
 
       .title-container {
         height: 25%;
@@ -394,7 +394,7 @@ Desktops 1601px and more
 
   .mask {
     width: 80%;
-    height: 90%;
+    height: 80%;
   }
 
   .img-container:nth-child(even) {
